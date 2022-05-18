@@ -3,5 +3,135 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "checkout": {
+      "projectType": "library",
+      "root": "projects/checkout",
+      "sourceRoot": "projects/checkout/src",
+      "prefix": "klump",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/checkout/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/checkout/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/checkout/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/checkout/src/test.ts",
+            "tsConfig": "projects/checkout/tsconfig.spec.json",
+            "karmaConfig": "projects/checkout/karma.conf.js"
+          }
+        }
+      }
+    },
+    "checkout-example": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/checkout-example",
+      "sourceRoot": "projects/checkout-example/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/checkout-example",
+            "index": "projects/checkout-example/src/index.html",
+            "main": "projects/checkout-example/src/main.ts",
+            "polyfills": "projects/checkout-example/src/polyfills.ts",
+            "tsConfig": "projects/checkout-example/tsconfig.app.json",
+            "assets": [
+              "projects/checkout-example/src/favicon.ico",
+              "projects/checkout-example/src/assets"
+            ],
+            "styles": [
+              "projects/checkout-example/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/checkout-example/src/environments/environment.ts",
+                  "with": "projects/checkout-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "checkout-example:build:production"
+            },
+            "development": {
+              "browserTarget": "checkout-example:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "checkout-example:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/checkout-example/src/test.ts",
+            "polyfills": "projects/checkout-example/src/polyfills.ts",
+            "tsConfig": "projects/checkout-example/tsconfig.spec.json",
+            "karmaConfig": "projects/checkout-example/karma.conf.js",
+            "assets": [
+              "projects/checkout-example/src/favicon.ico",
+              "projects/checkout-example/src/assets"
+            ],
+            "styles": [
+              "projects/checkout-example/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "checkout"
 }
