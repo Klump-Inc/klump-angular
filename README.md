@@ -9,7 +9,7 @@
 ```bash
 $ npm install klump-angular
 # or
-$ yarn  add  klump-angular
+$ yarn add klump-angular
 
 ```
 
