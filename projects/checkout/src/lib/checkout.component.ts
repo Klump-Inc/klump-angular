@@ -5,7 +5,7 @@ const SCRIPT_URL = 'https://js.useklump.com/klump.js';
 @Component({
   selector: 'klump-checkout',
   template: `
-    <div id="klump__checkout" (click)="handleClick()"></div>
+    <div id="klump__checkout" (click)="onClick()"></div>
   `,
   styles: [
   ]
@@ -27,10 +27,10 @@ export class CheckoutComponent implements OnInit {
     this.loadScript(SCRIPT_URL);
   }
 
-  @Output() clickEvent = new EventEmitter<string>();
+  @Output() btnClick = new EventEmitter<string>();
 
-  handleClick(){
-    this.clickEvent.emit('clicked')
+  onClick(){
+    this.btnClick.emit()
   }
 
 }

@@ -1,6 +1,19 @@
 {
-  "name": "checkout",
+  "name": "klump-angular",
   "version": "0.0.1",
+  "description": "Klump component for Angular",
+  "author": "Klump-Inc",
+  "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klump-Inc/klump-angular.git"
+  },
+  "keywords": [
+    "Klump",
+    "Angular",
+    "Klump Checkout",
+    "Pay With Klump"
+  ],
   "peerDependencies": {
     "@angular/common": "^13.3.0",
     "@angular/core": "^13.3.0"

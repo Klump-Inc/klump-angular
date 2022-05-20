@@ -7,6 +7,10 @@
       "checkout": [
         "dist/checkout/checkout",
         "dist/checkout"
+      ],
+      "klump-checkout": [
+        "dist/klump-checkout/klump-checkout",
+        "dist/klump-checkout"
       ]
     },
     "outDir": "./dist/out-tsc",
