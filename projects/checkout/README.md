@@ -2,7 +2,7 @@
 
 > Klump component for React that helps you integrate Klump - https://useklump.com/ easily"
 
-[![NPM](https://img.shields.io/npm/v/klump-react.svg)](https://www.npmjs.com/package/klump-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/klump-react.svg)](https://www.npmjs.com/package/klump-angular) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
