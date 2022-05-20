@@ -16,23 +16,23 @@ $ yarn add klump-angular
 ## Usage
 
 ```javascript
-    import { CheckoutModule } from 'klump-angular';
+import { CheckoutModule } from 'klump-angular';
 
-    @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports: [
-        BrowserModule,
-        CheckoutModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-    })
+@NgModule({
+declarations: [
+    AppComponent
+],
+imports: [
+    BrowserModule,
+    CheckoutModule
+],
+providers: [],
+bootstrap: [AppComponent]
+})
 ```
 
 ```javascript
-    import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
